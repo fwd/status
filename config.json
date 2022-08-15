@@ -1,0 +1,34 @@
+{
+	"title": "Nano.to - Status",
+	"servers": [
+		{
+			"name": "Checkout UI",
+			"url": "https://nano.to",
+			"address": "nano.to"
+		},
+		{
+			"icon": "server",
+			"name": "Username API",
+			"url": "https://nano.to/known.json",
+			"address": "nano.to/known"
+		},
+		{
+			"icon": "server",
+			"name": "Proof of Work API",
+			"url": "https://pow.nano.to/E4094A9ABA876DC3EE34042A06E8DF0501BCC578484030FBB11B98EDE3B81D2A",
+			"address": "pow.nano.to"
+		},
+		{
+			"icon": "server",
+			"name": "Price API",
+			"url": "https://api.nano.to/price",
+			"address": "api.nano.to/price"
+		},
+		{
+			"offline": true,
+			"name": "New Usernames",
+			"url": "https://api.nano.to/lease/esteban3",
+			"address": "api.nano.to/lease"
+		}
+	]
+}

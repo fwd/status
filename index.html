@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="dist/vue.js"></script>
+  <script src="dist/axios.js"></script>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="dist/normalize.min.css">
+    <link rel="stylesheet" href="dist/style.css">
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div id="app" class="dashboard">
+      <header class="dashboard-header">
+        <h1 class="dashboard-title">{{ config.title }}</h1>
+        <div class="dashboard-clock">
+          <div class="dashboard-clock-digital">{{ (new Date()).toLocaleTimeString() }}</div>
+          <table class="dashboard-clock-binary">
+            <tr class="hours">
+              <td v-for="i in 6" :class="`num${Math.random()<0.5?0:1 ? '1' : '0'}`"></td>
+            </tr>
+            <tr class="minutes">
+              <td v-for="i in 6" :class="`num${Math.random()<0.5?0:1 ? '1' : '0'}`"></td>
+            </tr>
+            <tr class="seconds">
+              <td v-for="i in 6" :class="`num${Math.random()<0.5?0:1 ? '1' : '0'}`"></td>
+            </tr>
+          </table>
+        </div>
+      </header>
+      <div v-if="config.message" class="message" v-html="config.message"></div>
+      <div v-if="config.servers" class="server-list">
+        <div @click="click(i)" v-for="i in config.servers" :class="`server ${i.offline ? 'has-failed' : ''}`">
+          <div :class="`server-icon fa fa-${i.icon || 'globe'}`"></div>
+          <ul class="server-details">
+            <li>Hostname: <span class="data">{{ i.name || i.title || 'Hostname' }}</span>
+            </li>
+            <li>Status: <span class="data signal">{{ i.offline ? 'OFFLINE' : 'ONLINE' }}</span>
+            </li>
+            <li>Address: <span class="data">{{ i.address || '127.0.0.1' }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: { config: false },
+        mounted() {
+          this.load()
+          setInterval(() => {
+            this.$forceUpdate()
+          }, 1000)
+        },
+        watch: {},
+        computed: {},
+        methods: {
+          click(i) {
+            if (i.href) window.open(i.href, '_blank')
+          },
+          load(cb) {
+            axios.get('config.json').then((res) => {
+                this.config = res.data
+                document.title = this.config.title || 'Status'
+                if (cb) cb(res.data)
+            }).catch((e) => {
+                if (e.message.includes('properties of')) {
+                    alert('The config JSON has bad syntax. Fix it, please. Use a "JSON Linter" to find issue easily.')
+                } else {
+                  console.log(e)
+                    alert("Error:", e)
+                }
+            })
+          }
+        },
+      })
+  </script>
+  </body>
+</html>
