@@ -2,8 +2,8 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-<h1 align="center" style="font-size: 30px">Easy Docs</h1>
-<h3 align="center" style="font-size: 30px">(HTML + JSON + Markdown)</h3>
+<h1 align="center" style="font-size: 30px">Status Page</h1>
+<h3 align="center" style="font-size: 30px">(Hosted on Github)</h3>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
@@ -11,21 +11,6 @@
 
 <a href="https://docs.nano.to" target="_blank">https://docs.nano.to</a>
 
-## Features
-
-- 1 Minute Install
-- No Compiling or Installing
-- Write in Markdown
-- Local & **Remote** Markdown Files
-- Host on Github Pages
-- Edit Docs on Github (If you want)
-- Changelog & FAQ Section
-- No Installing or Compiling
-- Light/Dark Mode
-- Offline Support
-- Mobile Optimized
-- Developer Friendly 
-- **Mars Ready 🚀**
 
 ## ❯ 1. Install
 
@@ -35,7 +20,7 @@ git clone git@github.com:fwd/status.git && cd docs
 
 ## ❯ 2. Edit
 
-Open ```docs``` in your favorite editor, and serve ```/index.html``` with a server. 
+Open ```config.json``` in your favorite editor, and serve ```/index.html``` with a server. 
 
 **NPM**: ```npm start```
 
@@ -43,15 +28,12 @@ Open ```docs``` in your favorite editor, and serve ```/index.html``` with a serv
 
 **Edit:**
 
-- [/pages](/pages) - Pages in [Markdown](https://www.markdownguide.org/cheat-sheet/#basic-syntax).
-- [config.json](/config.json) - Configure Documentation.
+- [config.json](/config.json) - Configure Servers.
 - [favicon.png](/favicon.png) - Customize Favicon.
-- [/images](/images) - Images for your docs.
 
 **Optional:**
-- [custom.css](/custom.css) - Optional, Custom CSS.
 - [index.html](/index.html) - Most things are configured via JSON file.
-- [/assets](/assets) - Docs CSS & JS Files.
+- [/dist](/dist) - Status CSS & JS Files.
 
 ## ❯ 3. Deploy
 
@@ -94,34 +76,11 @@ You now have free, reliable hosting for your docs. Nice.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Further Reading
-
-#### Private Hosting
-
-To keep Docs private, serve ```/index.html``` on your own server. Bring your own Auth.
-
-#### 404 & Redirects
-- Github Pages allows Redirect by creating a 404.html file.
-- Run ```npm build``` to do this automatically
-
-```
-cp index.html 404.html
-```
-
-#### Updating Docs
-
-More features are planned for **Easy Docs**. If you don't edit ```/assets``` and ```index.html```. You can update at anytime. 
+#### Update Template
 
 ```
 npm run update
 ```
-
-
-**Planned Features**
-
-- Translation
-- Codepen
-- [API Testing](https://petstore3.swagger.io/)
 
 ## ❯ Contributing
 
