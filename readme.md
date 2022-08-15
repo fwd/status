@@ -7,27 +7,20 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## Live Demo
-
-<a href="https://docs.nano.to" target="_blank">https://docs.nano.to</a>
-
-
-## ❯ 1. Install
+## ❯ 1. Clone
 
 ```bash
-git clone git@github.com:fwd/status.git && cd docs
+git clone git@github.com:fwd/status.git && cd status
 ```
 
-## ❯ 2. Edit
+## ❯ 2. Configure
 
-Open ```config.json``` in your favorite editor, and serve ```/index.html``` with a server. 
+Open ```config.json``` in any editor, and serve ```/index.html``` with a server. 
 
-**NPM**: ```npm start```
+- **NPM**: ```npm start```
+- **PHP**: ```php -S localhost:8080```
 
-**PHP**: ```php -S localhost:8080```
-
-**Edit:**
-
+**Editable:**
 - [config.json](/config.json) - Configure Servers.
 - [favicon.png](/favicon.png) - Customize Favicon.
 
@@ -48,7 +41,7 @@ git remote add origin git@github.com:NAME/REPO.git
 git push -u origin "master"
 ```
 
-## ❯ 4. Enable Github Pages
+## ❯ 4. Free Website Hosting
 
 - Github repo must be public
 - Go to [Settings Page](/../../settings/pages)
