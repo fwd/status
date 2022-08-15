@@ -2,7 +2,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-<h1 align="center" style="font-size: 30px">Free Status Page</h1>
+<h1 align="center" style="font-size: 30px">Easy Status Page</h1>
 <h3 align="center" style="font-size: 30px">Hosted on Github</h3>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
